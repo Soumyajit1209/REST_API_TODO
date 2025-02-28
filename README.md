@@ -104,4 +104,4 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <your
 ```bash
 curl -H "Authorization: Bearer <your_token>" http://localhost:5000/api/todos
 ```
-Note: A user already added for testing (as in example)
+Note: An user already added for testing (as in example)
