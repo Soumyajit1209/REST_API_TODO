@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoFlow - Modern Task Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">TodoFlow</div>
+            <div class="subtitle">Streamline your productivity</div>
+        </div>
+
+        <div id="error-message" class="error" style="display: none;"></div>
+        <div id="success-message" class="success" style="display: none;"></div>
+
+        <!-- Authentication Section -->
+        <div id="auth-section" class="auth-section active">
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h2 style="margin-bottom: 20px; text-align: center; color: #333;">Welcome Back</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <div class="auth-switch">
+                    <p>Don't have an account? <a href="#" onclick="showRegister()">Sign up here</a></p>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h2 style="margin-bottom: 20px; text-align: center; color: #333;">Create Account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <div class="auth-switch">
+                    <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Todo Section -->
+        <div id="todo-section" class="todo-section">
+            <div id="user-info" class="user-info">
+                <h3>Welcome, <span id="username"></span>!</h3>
+                <button class="btn btn-secondary btn-small" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="todo-input-section">
+                <h3 style="margin-bottom: 20px; color: #333;">Add New Task</h3>
+                <form id="todoForm">
+                    <div class="todo-input-group">
+                        <input type="text" id="todoTitle" placeholder="Task title..." required>
+                        <button type="submit" class="btn">Add Task</button>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="todoDescription" placeholder="Task description (optional)">
+                    </div>
+                </form>
+            </div>
+
+            <div id="todos-container">
+                <div id="loading" class="loading">Loading your tasks...</div>
+                <div id="todo-list" class="todo-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
